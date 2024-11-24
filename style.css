@@ -1,0 +1,511 @@
+/* color */
+
+:root {
+    --main: #d01c1c;
+    --black: #333;
+    --white: #fff;
+    --c-444: #444;
+    --text: rgb(176, 170, 159);
+    --text2: rgb(243, 239, 233);
+    --shadow: 0px 0px 15px rgb(0 0 0 / 0.3);
+}
+
+.darkmode {
+    --black: #181a1b;
+}
+
+/* main style */
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+*:not(path) {
+    transition: all 0.4s ease;
+}
+
+input {
+    box-shadow: 0;
+    border: 0;
+    outline: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--black);
+    font-family: "Poppins", serif;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: var(--white);
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+svg {
+    fill: var(--white);
+}
+
+/* style header */
+
+header {
+    width: 100%;
+    height: 70px;
+    border-bottom: 2px solid var(--c-444);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    background-color: var(--black);
+}
+
+header nav {
+    width: 90%;
+    height: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo a svg:hover {
+    fill: var(--main);
+}
+
+header .links li {
+    display: inline-block;
+    padding: 10px 15px;
+    margin: 0 3px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+header .links li:hover,
+header .links li.active {
+    outline: 1px solid var(--text2);
+}
+
+header .links li a {
+    color: var(--text);
+}
+
+header .links li:hover a,
+header .links li.active a {
+    color: var(--text2);
+}
+
+header .search {
+    width: 250px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    padding: 0 20px;
+    background-color: rgba(30, 32, 33, 0.8);
+}
+
+header .search input {
+    width: 100%;
+    height: 30px;
+    font-size: 14px;
+    color: var(--text);
+    background-color: transparent;
+}
+
+header .search .icon-search {
+    cursor: pointer;
+}
+
+header .search .icon-search:hover svg {
+    color: var(--main);
+}
+
+header .btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .btn div {
+    width: 30px;
+    height: 30px;
+    margin: 0 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+header .btn div svg:hover {
+    fill: var(--main);
+}
+
+/* style main */
+
+main {
+    padding-top: 80px;
+}
+
+.latest-movies h2,
+.more-likes h2,
+.movies h2 {
+    padding-left: 30px;
+    font-weight: 300;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--text2);
+    margin: 15px 0;
+}
+
+/* style Latest Movies */
+
+.latest-movies .slide {
+    width: 100%;
+    overflow: hidden;
+}
+
+.latest-movies .slide ul {
+    display: flex;
+}
+
+.latest-movies .slide li {
+    margin-right: 10px;
+}
+
+.latest-movies .slide .box {
+    width: 430px;
+    height: 250px;
+    border-radius: 10px;
+    margin: 0 20px 10px 20px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.latest-movies .slide .box:hover {
+    transform: scale(0.95);
+}
+
+/* style Latest Movies */
+
+.more-likes {
+    border-top: 2px solid var(--c-444);
+    margin-top: 45px;
+}
+
+.more-likes .slide {
+    width: 100%;
+    overflow: hidden;
+}
+
+.more-likes .slide ul {
+    display: flex;
+}
+
+.more-likes .slide li {
+    margin-right: 10px;
+}
+
+.more-likes .slide .box {
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 10px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.more-likes .slide .box:hover .img img {
+    transform: scale(1.15);
+}
+
+.more-likes .slide .box .img {
+    width: 100%;
+    height: 270px;
+    overflow: hidden;
+}
+
+.more-likes .slide .box .name {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 10px;
+}
+
+.more-likes .slide .box .name strong {
+    color: var(--text2);
+}
+
+.more-likes .slide .box .name p {
+    color: var(--text);
+}
+
+/* style Movies */
+
+.movies {
+    border-top: 2px solid var(--c-444);
+    margin-top: 45px;
+}
+
+.movies .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.movies .container .box {
+    width: 300px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    margin: 20px;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.movies .container .box:hover {
+    transform: translateY(-10px);
+}
+
+.movies .container .box:hover a {
+    color: var(--text2);
+}
+
+.movies .container .img {
+    width: 100%;
+    height: 400px;
+}
+
+.movies .container .box a {
+    text-align: center;
+    display: block;
+    font-weight: 600;
+    max-width: 80%;
+    text-overflow: ellipsis;
+    color: var(--text);
+    margin: 20px;
+}
+
+/* style main buttons */
+
+main .btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main .btn a {
+    width: 130px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    border-radius: 4px;
+    color: var(--white);
+    background-color: var(--main);
+}
+
+main .btn a:hover:not(:first-child) {
+    transform: rotate(5deg);
+}
+
+main .btn a:hover {
+    transform: rotate(-5deg);
+}
+
+/* style slider */
+
+.slider1 {
+    animation: slider 15s linear infinite;
+}
+
+.slider2 {
+    animation: slider 20s linear infinite;
+}
+
+@keyframes slider {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+/* style footer */
+
+footer .container {
+    width: 90%;
+    margin: auto;
+    padding: 15px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer .container .copyright,
+footer .container a {
+    color: var(--text);
+}
+
+footer .container a:hover {
+    color: var(--text2);
+}
+
+/* darkmode */
+
+.darkmode-btn {
+    position: fixed;
+    right: 15px;
+    bottom: 15px;
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--black);
+    box-shadow: var(--shadow);
+}
+
+.darkmode-btn #them {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+}
+
+#them svg {
+    cursor: pointer;
+}
+
+#them svg:last-child {
+    display: none;
+}
+
+.darkmode #them svg:first-child {
+    display: none;
+}
+
+.darkmode #them svg:last-child {
+    display: block;
+}
+
+/* responsive */
+
+.responsive-link {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.show header .links ul {
+    display: block !important;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 70px;
+    background-color: var(--black);
+    box-shadow: 0 8px 15px rgb(0 0 0 / 0.5);
+}
+
+.show header .links li {
+    display: block !important;
+    margin: 0 0 5px 0 !important;
+    padding: 15px 10px !important;
+}
+
+/* navbar responsive */
+@media (max-width:1024px) {
+    header .logo {
+        margin-right: auto;
+    }
+
+    header .links ul {
+        display: none;
+    }
+
+    header .links .responsive-link {
+        display: flex;
+    }
+
+    header .search {
+        margin-left: 20px;
+    }
+}
+
+@media (max-width:380px) {
+    header .search {
+        width: 200px;
+    }
+}
+
+@media (max-width:330px) {
+    header .search {
+        margin-left: 10px;
+    }
+}
+
+/* latest movies responsive */
+@media (max-width:430px) {
+    .latest-movies .slide .box {
+        width: 250px;
+        height: 150px;
+        margin: 0px 10px 5px 10px;
+    }
+}
+
+/* slider responsive */
+@media (max-width:430px) {
+    .slider1 {
+        animation: slider 7.5s linear infinite;
+    }
+
+    .slider2 {
+        animation: slider 10s linear infinite;
+    }
+}
+
+/* footer responsive */
+@media (max-width:330px) {
+    main .btn {
+        flex-direction: column;
+    }
+}
+
+/* footer responsive */
+@media (max-width:768px) {
+    footer .container {
+        flex-direction: column;
+        text-align: center;
+    }
+}
